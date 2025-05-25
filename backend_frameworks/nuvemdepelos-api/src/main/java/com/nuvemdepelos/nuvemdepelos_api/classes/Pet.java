@@ -1,24 +1,24 @@
 package com.nuvemdepelos.nuvemdepelos_api.classes;
 
 public class Pet {
-    private String name;
+    private String nome;
     private String raca;
     private int idade;
     private String sexo;
 
     public Pet(String name, String raca, int idade, String sexo) {
-        this.name = name;
+        this.nome = name;
         this.raca = raca;
         this.idade = idade;
         this.sexo = sexo;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getRaca() {
