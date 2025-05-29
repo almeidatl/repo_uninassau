@@ -10,7 +10,7 @@ public class Consulta {
     private String data;
 
     public Consulta() {
-        
+
     }
 
     @ManyToOne
