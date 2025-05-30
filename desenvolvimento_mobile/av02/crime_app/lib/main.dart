@@ -25,45 +25,53 @@ class _CrimeQuestionScreenState extends State<CrimeQuestionScreen> {
     "Esteve no local do crime?",
     "Mora perto da vítima?",
     "Devia para a vítima?",
-    "Já trabalhou com a vítima?"
+    "Já trabalhou com a vítima?",
   ];
   List<bool> answers = List.filled(5, false);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Perguntas do Crime")),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: questions.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(questions[index]),
-                  trailing: Switch(
-                    value: answers[index],
-                    onChanged: (bool value) {
-                      setState(() {
-                        answers[index] = value;
-                      });
-                    },
-                  ),
+      appBar: AppBar(title: Text("Interrogatório")),
+      body: Center(
+        child: Container(
+          width: 300,
+          height: 500,
+          child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: questions.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text(questions[index]),
+                    trailing: Switch(
+                      value: answers[index],
+                      onChanged: (bool value) {
+                        setState(() {
+                          answers[index] = value;
+                        });
+                      },
+                    ),
+                  );
+                },
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                int score = answers.where((answer) => answer).length;
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ResultScreen(score)),
                 );
               },
+              child: Text("Enviar"),
             ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              int score = answers.where((answer) => answer).length;
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ResultScreen(score)),
-              );
-            },
-            child: Text("Enviar"),
-          ),
-        ],
+          ],
+        )
+        ),
+        
       ),
     );
   }
