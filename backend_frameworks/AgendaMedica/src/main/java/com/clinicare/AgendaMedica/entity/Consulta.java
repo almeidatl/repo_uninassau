@@ -2,18 +2,15 @@ package com.clinicare.AgendaMedica.entity;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
 
 @Entity
 public class Consulta {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDateTime data;
+    private String data;
 
-    public Consulta(Long id, LocalDateTime data, Paciente paciente) {
-        this.id = id;
-        this.data = data;
-        this.paciente = paciente;
+    public Consulta() {
+
     }
 
     @ManyToOne
@@ -27,11 +24,11 @@ public class Consulta {
         this.id = id;
     }
 
-    public LocalDateTime getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(LocalDateTime data) {
+    public void setData(String data) {
         this.data = data;
     }
 

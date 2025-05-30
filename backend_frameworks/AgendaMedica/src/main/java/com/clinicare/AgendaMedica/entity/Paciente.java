@@ -7,16 +7,14 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Paciente {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String telefone;
 
-    public Paciente(Long id, String nome, String telefone) {
-        this.id = id;
-        this.nome = nome;
-        this.telefone = telefone;
+    public Paciente() {
     }
 
     public Long getId() {
