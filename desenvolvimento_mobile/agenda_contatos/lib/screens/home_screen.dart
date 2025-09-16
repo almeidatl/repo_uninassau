@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Agenda de Contatos")),
+      appBar: AppBar(title: Text("users")),
       body: Column(
         children: [
           Padding(
@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: TextField(
               controller: _searchController,
               decoration: InputDecoration(
-                labelText: "Buscar contato...",
+                labelText: "search user...",
                 prefixIcon: Icon(Icons.search),
                 border: OutlineInputBorder(),
               ),
